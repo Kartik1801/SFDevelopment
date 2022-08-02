@@ -22,3 +22,4 @@ class RelationshipInSOQL{
 
     }
 }
+RelationshipInSOQL s = new RelationshipInSOQL();
