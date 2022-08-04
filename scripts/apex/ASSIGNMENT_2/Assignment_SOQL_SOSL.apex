@@ -32,19 +32,16 @@ public class SOQLSOSLAssignment1{
     public void solution2b(){
         List<Opportunity> OpportunityQueried2 = [ SELECT Name, Account.Name FROM Opportunity WHERE Name LIKE '%A' ];
         System.debug(OpportunityQueried2);
-        for(Opportunity opp : OpportunityQueried2)
+        Account acc = [ SELECT Name, (Select Name from Contacts), (Select Name from Attachments) FROM Account where ID IN :OpportunityQueried2 ];    
+        System.debug(opp.Name);
+        System.debug(acc);/
+        for(Contact cont: acc.Contacts)
         {
-            System.debug(opp.Name);
-            Account acc = [ SELECT Name, (Select Name from Contacts), (Select Name from Attachments) FROM Account where ID=:opp.AccountID ];
-            System.debug(acc);
-            for(Contact cont: acc.Contacts)
-            {
-                System.debug(cont);
-            }
-            for(Attachment att: acc.Attachments)
-            {
-                System.debug(att);
-            }
+            System.debug(cont);
+        }
+        for(Attachment att: acc.Attachments)
+        {
+            System.debug(att);
         }
     }
     public void solution3(){
@@ -61,13 +58,11 @@ public class SOQLSOSLAssignment1{
         Map<ID, list<Contact>> contactMap = new Map<ID, List<Contact>>();        
         Map<ID, list<Opportunity>> opportunityMap = new Map<ID, List<Opportunity>>();        
         Map<ID, list<Attachment>> notesMap = new Map<ID, List<Attachment>>();        
-        for( Account a: Acc )
-        { 
-            List<Account> All = [ SELECT Name, ( Select Name From Contacts ), 
+        List<Account> All = [ SELECT Name, ( Select Name From Contacts ), 
                                 ( Select Name from Opportunities ), ( Select Name from Attachments ) 
-                                  FROM Account WHERE ID = :a.ID ];
-            for(Account Acct : All)
-            {
+                                  FROM Account WHERE ID In :Acc ];
+        for(Account Acct : All)
+        {
                 list<Contact> ContactList = new List<Contact>();
                 list<Opportunity> OpportunityList = new List<Opportunity>();
                 list<Attachment> AttachmentList = new List<Attachment>();
@@ -86,8 +81,7 @@ public class SOQLSOSLAssignment1{
                     AttachmentList.add(c);
                 }
                 notesMap.put(Acct.ID, AttachmentList);
-            }  
-         }
+        }  
         System.debug(contactMap);
         System.debug(opportunityMap);
         System.debug(notesMap); 
