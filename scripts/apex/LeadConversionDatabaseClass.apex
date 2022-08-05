@@ -8,5 +8,4 @@ public class LeadConversionClass{
         Database.LeadConvertResult lcr = Database.convertLead(lc); 
     }
 }
-
 LeadConversionClass lc = new LeadConversionClass();
