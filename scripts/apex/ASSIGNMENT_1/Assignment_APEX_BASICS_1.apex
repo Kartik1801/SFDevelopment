@@ -1,25 +1,39 @@
 public class Asssignment1 {
-    Asssignment1(List<List<String>> l){
-    set<String> s = new set<String>(); 
-    for(List<String> ListItem: l){
-        s.addAll(ListItem);
-        ListItem.clear();
-        ListItem.addAll(s);
-        ListItem.sort();
-        s.clear();
-    }
-    System.debug(l);
+    public void Solution(list<list<string>> l){
+        list<list<string>> finalList = new List<List<String>>();
+        for(list<string> ls: l){
+            list<String> tempList = new List<String>();
+            for(String str: ls){
+                list<string> newList = str.split(';');
+                Set<String> strSet = new Set<String>();
+                strSet.addAll(newList);
+                newList.clear();
+                newList.addAll(strSet);
+                newList.sort();
+                String newStr = '';
+                for(String s: newList){
+                    newStr+= s + ';';
+                }
+                newStr = newStr.removeEnd(';');
+                tempList.add(newStr);
+            }
+        finalList.add(tempList);
+        }
+        System.debug(finalList);
     }
 }
-
-List<List<String>> l1 = new List<List<String>>();
-List<String> a1 = new List<String>{'a', 'b', 'a', 'v', 'c'};
-List<String> b1 = new List<String>{'x', 'x', 'y', 'c', 'q'};
+List<List<String>> l = new List<List<String>>();
+List<String> l1 = new List<String>();
+String a1 = 'a;b;a;v;c';
+String b1 = 'x;x;y;c;q';
 l1.add(a1);
 l1.add(b1);
-List<List<String>> l2 = new List<List<String>>();
-List<String> a2 = new List<String>{'m', 'b', 'h', 'j', 'm'};
-List<String> b2 = new List<String>{'u', 'k', 'j', 'u'};
-l2.add(a2);l2.add(b2);
-Asssignment1 sol1 = new Asssignment1(l1);
-Asssignment1 sol2 = new Asssignment1(l2);
+list<String> l2 = new List<String>(); 
+String a2 = 'm;b;h;j;m';
+String b2 = 'u;k;j;u';
+l2.add(a2);
+l2.add(b2); 
+l.add(l1);
+l.add(l2);
+Asssignment1 sol1 = new Asssignment1();
+sol1.solution(l);
