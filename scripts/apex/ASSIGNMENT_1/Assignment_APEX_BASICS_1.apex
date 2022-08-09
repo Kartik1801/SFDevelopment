@@ -10,11 +10,7 @@ public class Asssignment1 {
                 newList.clear();
                 newList.addAll(strSet);
                 newList.sort();
-                String newStr = '';
-                for(String s: newList){
-                    newStr+= s + ';';
-                }
-                newStr = newStr.removeEnd(';');
+                String newStr = String.join(newList, ';');
                 tempList.add(newStr);
             }
         finalList.add(tempList);
