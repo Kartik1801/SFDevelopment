@@ -1,5 +1,5 @@
-trigger TriggerAssignment1 on Account (After insert, After update) {
-    if(Trigger.isAfter && ( Trigger.isInsert || Trigger.isUpdate )){
+trigger TriggerAssignment1 on Account (After insert, Before update) {
+    if((Trigger.isBefore && Trigger.isUpdate ) || ( Trigger.isAfter && Trigger.isInsert) ){
         TriggerAssignment1HelperClass.opportunityCheckTrigger(Trigger.new);
     }
 }
