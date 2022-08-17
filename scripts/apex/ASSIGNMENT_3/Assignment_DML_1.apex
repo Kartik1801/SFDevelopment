@@ -35,7 +35,7 @@ public class Solution {
         a.Website = 'cafe.abc.com';
         a.name += ' updated';
         a.Type = 'Prospect';
-        Database.update(a);
+        Database.upsert(a);
     }
     public void solution5a(){
         List<Student__c> studentList = [ SELECT ID FROM Student__c WHERE Student_Name__c LIKE '_r%' ];

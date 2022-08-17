@@ -4,6 +4,7 @@ public with sharing class TriggerAssignment10HelperClass {
             if(oli.UnitPrice < 1000 ){
                 oli.addError('Cant Add');
             }
+            oli.Description = oli.Product2.Description;
         }
     }
 }
