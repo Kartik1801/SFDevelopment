@@ -34,7 +34,7 @@ public class SOQLSOSLAssignment1{
         System.debug(OpportunityQueried2);
         Account acc = [ SELECT Name, (Select Name from Contacts), (Select Name from Attachments) FROM Account where ID IN :OpportunityQueried2 ];    
         System.debug(opp.Name);
-        System.debug(acc);/
+        System.debug(acc);
         for(Contact cont: acc.Contacts)
         {
             System.debug(cont);

@@ -10,17 +10,19 @@ public with sharing class TriggerAssignment7HelperClass {
             m.put(bkps.Name, bkps);
         }
         for(Opportunity opp : oppList){
-            if(!s.contains(opp.Name)){
-                Opportunity o = opp.clone();
-                o.Name += ' Backup';
-                opportunityBackup.add(o);
-            }
-            else{
-                Opportunity o = opp.clone();
-                o.Name += ' Backup';
-                o.id = m.get(opp.Name).id;
-                opportunityBackup.add(o);
-            }
+            if(!opp.Name.contains('Backup')){
+                if(!s.contains(opp.Name)){
+                    Opportunity o = opp.clone();
+                    o.Name += ' Backup';
+                    opportunityBackup.add(o);
+                }
+                else{
+                    Opportunity o = opp.clone();
+                    o.Name += ' Backup';
+                    o.id = m.get(opp.Name).id;
+                    opportunityBackup.add(o);
+                }
+            }            
         }
         upsert opportunityBackup;
     }
