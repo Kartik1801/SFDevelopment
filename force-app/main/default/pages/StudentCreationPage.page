@@ -1,0 +1,20 @@
+<apex:page standardController="Student__c" sidebar="false">
+    <apex:form>
+        <apex:pageBlock title='Student Create Page'>
+            <apex:pageBlockSection collapsible="false">
+                <apex:inputField value="{!Student__c.Student_Name__c}" />
+                <apex:inputField value="{!Student__c.Email__c}" />
+                <apex:inputField value="{!Student__c.Student_Phone_Number__c}" />
+                <apex:inputField value="{!Student__c.Course_Type__c}" />
+                <apex:inputField value="{!Student__c.initial_Fees__c}" />
+                <apex:inputField value="{!Student__c.Courses__c}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" collapsible="false">
+                <apex:inputField value="{!Student__c.Comments__c}" html-rows="5" html-cols="135" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!Save}" value="SUBMIT" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
