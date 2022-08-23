@@ -8,7 +8,7 @@ public with sharing class LeadMessageApi {
         String token = EncodingUtil.base64Encode(b);
         String body = 'From=' + EncodingUtil.urlEncode('+18336971126', 'UTF-8') +
                       '&To=' + EncodingUtil.urlEncode('+91' + phoneNumber, 'UTF-8') + '&Body=' + 
-                       EncodingUtil.urlEncode('Hi there ' + firstName + ' ' + lastName + ' from ' + company + '\n Thanks for reaching out to us.', 'UTF-8');
+                       EncodingUtil.urlEncode('\n Hi there ' + firstName + ' ' + lastName + ' from ' + company + '\n Thanks for reaching out to us.', 'UTF-8');
 
         Http httpManager = new Http();
         HttpRequest req = new HttpRequest();

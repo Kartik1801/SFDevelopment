@@ -11,6 +11,7 @@ public with sharing class TriggerAssignment2HelperClass {
                 oppMap.get(opp.Name).add(opp);
             }
         }
+        
         for(Opportunity opp: oppList){
             if(oppMap.containsKey(opp.Name)){
                 for(Opportunity o: oppMap.get(opp.Name)){
