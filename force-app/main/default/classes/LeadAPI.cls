@@ -28,7 +28,7 @@ global with sharing class LeadAPI {
         Lead l = new Lead( firstName = (String)reqMap.get('firstName'), lastName = (String)reqMap.get('lastName'), city = ucity, State = state, PostalCode = code,  
                            company = (String)reqMap.get('company'), MobilePhone = (String)reqMap.get('phone'));
         
-        Database.SaveResult result = Database.insert(l);
+        Database.SaveResult result = Database.insert(l,false);
               
         if (result.isSuccess()){
         return 'Record created Successfully: ' + result.getId();
@@ -56,4 +56,3 @@ global with sharing class LeadAPI {
         System.debug('Body(Strinified): '+ str);
         System.debug('Body(JSON deserialized): ' + reqMap);
          */ 
-        
