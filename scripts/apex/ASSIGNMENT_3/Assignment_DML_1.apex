@@ -71,6 +71,7 @@ public class Solution {
         cpricebook.IsActive = true;
         Product2 cproduct =  new Product2(Name = 'Custom Product1');
         cproduct.IsActive = true;
+
         Database.insert (cproduct);
         Database.insert (cpricebook);
         pricebook2 stdpricebook = [ SELECT NAME, ID FROM Pricebook2 where isStandard = true];

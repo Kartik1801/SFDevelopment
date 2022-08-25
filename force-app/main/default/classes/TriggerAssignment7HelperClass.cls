@@ -12,6 +12,7 @@ public with sharing class TriggerAssignment7HelperClass {
         for(Opportunity opp : oppList){
             if(!opp.Name.contains('Backup')){
                 if(!s.contains(opp.Name)){
+                    opp.clo
                     Opportunity o = opp.clone();
                     o.Name += ' Backup';
                     opportunityBackup.add(o);
