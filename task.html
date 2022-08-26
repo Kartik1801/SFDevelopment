@@ -1,0 +1,40 @@
+<html>
+    <head>
+       <title>Task</title> 
+    </head>
+    <body>
+        <form action="#">
+            <div>
+                <Label>Name: 
+                    <input class= "name" type="text">
+                </Label>
+            </div>
+            <div>
+                <Label>Age: 
+                    <input class="age" type="text">
+                </Label>
+            </div>
+            <button class = "button">Submit</button>
+        </form>
+        <p class="text"></p>
+        <Script>
+            const name = document.querySelector(".name");
+            const age = document.querySelector(".age");
+            const text = document.querySelector("p");
+            const button = document.querySelector("button");
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                text.innerText = `Age ${name.value} is ${age.value}`;
+                
+                if(age.value > 0 && age.value <= 20 ){
+                    text.style.color = "green";
+                }else if(age.value > 20 && age.value < 50){
+                    text.style.color = "yellow";
+                }
+                else if(age.value >= 50){
+                    text.style.color = "red";
+                }
+            });
+       </Script>
+    </body>
+</html>
