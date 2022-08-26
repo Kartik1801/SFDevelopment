@@ -1,0 +1,20 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Enter Details: 
+        </h2>
+        <h3>Hi there {userName}, Enter your details below:</h3>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-p-around_medium lgc-bg slds-col">
+                <lightning-input data-id="name-input" class="CustomName" name="inp1" type="text" value={Name} onchange={nameChange} label="Name" placeholder="Enter Your Name"></lightning-input>
+            </div>
+            <div class="slds-p-around_medium lgc-bg slds-col">
+                <lightning-input  class="CustomAge" type="Number" value={Age} name="inp2" label="Age" onchange={ageChange} placeholder="Enter Your Age"></lightning-input>
+            </div>
+        </div>   
+        <div class="slds-p-around_medium lgc-bg slds-col slds-align_absolute-center">
+            <lightning-button variant="brand" label="Submit" title="Primary action" onclick={handleClick} class="slds-m-left_x-small CustomButton"></lightning-button>
+        </div>
+            <h2 class = "slds-text-heading_medium slds-m-bottom_medium text-field">Your Age Is : {userAge}</h2>
+    </div>
+</template>
