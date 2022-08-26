@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <h2 class="slds-text-heading_medium">
+            Enter Details: 
+        </h2>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col ">
+                <lightning-input class="first" name="first-name" type="text" value={firstName} onchange={fchange} label="First Name" placeholder="Enter First Name"></lightning-input>
+            </div>
+            <div class="slds-col">
+                <lightning-input class="last"  name="last-name" type="text"  value={lastName} onchange={lchange} label="Last Name"  placeholder="Enter Last Name"></lightning-input>
+            </div>
+        </div>
+        <div class="slds-gutter">
+            <h2 class = "slds-text-heading_medium slds-m-bottom_medium text-field">Alias: <br>  {userAlias}</h2>
+        </div>
+    </div>    
+</template>
